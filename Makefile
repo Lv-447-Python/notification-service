@@ -12,7 +12,6 @@ help: ## Show this help.
 setup_env: $(VENV_NAME)/bin/activate ## Prepare virtual environment.
 $(VENV_NAME)/bin/activate: requirements.txt | clean
 	test -d $(VENV_NAME) || ${PYTHON_LOCAL} -m virtualenv $(VENV_NAME)
-	mkdir -p files
 	${PYTHON_ENV} -m pip install -U pip
 	${PYTHON_ENV} -m pip install -r requirements.txt
 
